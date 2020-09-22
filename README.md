@@ -1,4 +1,4 @@
-# wood-sdesignvuecli
+# wood-sdesignvueclii
 
 ## Project setup
 ```
