@@ -1,3 +1,5 @@
 module.exports = {
-  publicPath: '/wood-sdesignvuecli/dist/'
-}
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/wood-sdesignvuecli/'
+    : '/',
+};
