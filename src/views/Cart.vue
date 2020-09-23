@@ -77,17 +77,17 @@
                                 <td class="align-middle">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <button class="btn btn-secondary" type="button" @click=
-                                            "changeQuantity(item.product.id,item.quantity + 1)">
-                                            +</button>
+                                          <button class="btn btn-secondary" type="button"
+                                          :disabled="item.quantity === 1"
+                                          @click="changeQuantity(item.product.id,item.quantity-1)
+                                          ">-</button>
                                         </div>
                                         <input type="number" class="form-control text-center"
                                          v-model="item.quantity" disabled>
                                         <div class="input-group-append">
-                                            <button class="btn btn-secondary" type="button"
-                                             :disabled="item.quantity === 1"
-                                             @click="changeQuantity(item.product.id,item.quantity-1)
-                                             ">-</button>
+                                          <button class="btn btn-secondary" type="button" @click=
+                                          "changeQuantity(item.product.id,item.quantity + 1)">
+                                          +</button>
                                         </div>
                                       </div>
                                 </td>
