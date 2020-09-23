@@ -59,8 +59,8 @@
                         <thead class="thead-light">
                             <tr>
                                 <th width="75">刪除</th>
-                                <th width="350">品名</th>
-                                <th width="200">數量</th>
+                                <th width="300">品名</th>
+                                <th width="300">數量</th>
                                 <th width="75" class="text-center">單價</th>
                                 <th width="75" class="text-center">單位</th>
                             </tr>
@@ -75,14 +75,14 @@
                                 </td>
                                 <td class="align-middle">{{ item.product.title }}</td>
                                 <td class="align-middle">
-                                    <div class="input-group">
+                                    <div class="input-group quantity">
                                         <div class="input-group-prepend">
                                           <button class="btn btn-secondary" type="button"
                                           :disabled="item.quantity === 1"
                                           @click="changeQuantity(item.product.id,item.quantity-1)
                                           ">-</button>
                                         </div>
-                                        <input type="number" class="form-control text-center"
+                                        <input type="number" class="form-control text-center px-0 py-0 quantitybtn"
                                          v-model="item.quantity" disabled>
                                         <div class="input-group-append">
                                           <button class="btn btn-secondary" type="button" @click=
@@ -118,7 +118,7 @@
                             <tr v-if="couponMoneySaved !== 0">
                                 <td colspan="3" class="text-right text-secondary">折扣：</td>
                                 <td colspan="2" class="text-right text-secondary">
-                                    - {{ couponMoneySaved }}  元</td>
+                                    - {{ couponMoneySaved }}  元 ( {{ 100 - couponPercent }}% 折扣 )</td>
                             </tr>
                             <tr v-if="couponMoneySaved !== 0">
                                 <td colspan="3" class="text-right">總計：</td>
