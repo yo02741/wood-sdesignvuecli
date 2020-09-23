@@ -11626,10 +11626,41 @@ li {
   border-bottom: 2px solid #86FFF8;
 }
 
+.card {
+  height: 100%;
+  border: 3px solid transparent;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 10px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 10px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.card:hover {
+  border: 3px solid #B38C4D;
+}
+
+.card:hover .card-body {
+  opacity: 1;
+}
+
 .cardimg {
-  height: 200px;
+  position: relative;
+  height: 400px;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.card-body {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: whitesmoke;
+  opacity: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
 
 .cartjumbotron {

@@ -63,31 +63,28 @@
                 <li class="col-12 col-md-6 col-lg-4 my-4" v-for="item in products" :key="item.id">
                     <div class="card mx-auto">
                         <div class="cardimg" :style="{ backgroundImage: `url('${ item.imageUrl[0] }')` }">
-                        </div>
-                        <div class="card-body">
+                          <div class="card-body">
                             <div class="title d-flex justify-content-between align-items-center mb-4">
-                                <h5 class="card-title mb-0 w-75">{{ item.title }}</h5>
+                                <h4 class="card-title mb-0 w-75 font-weight-bold">{{ item.title }}</h4>
                                 <span class="badge badge-secondary">{{ item.category }}</span>
                             </div>
-                            <div class="intro mb-4">
-                                <p class="card-text">{{ item.content }}</p>
-                            </div>
-                            <div v-if="!item.price || item.price === item.origin_price">
+                            <div v-if="!item.price || item.price === item.origin_price" class="d-flex justify-content-end align-items-end">
                                 <div>$<span class="h3 mx-1">{{ item.origin_price }}</span></div>
                             </div>
-                            <div class="price" v-else>
+                            <div class="price d-flex justify-content-between align-items-end" v-else>
                                 <del><span>$</span>{{ item.origin_price }}</del>
                                 <div><span class="text-danger h3 mx-1">$ {{ item.price }}</span></div>
                             </div>
                         </div>
+                        </div>
                         <div class="card-footer d-flex justify-content-between align-items-center">
-                            <a href="#" class="btn btn-sm btn-outline-secondary" @click.prevent="getProduct(item.id)">查看更多</a>
-                            <a href="#" class="btn btn-sm btn-outline-danger" @click.prevent="addToCart(item.id)">加入購物車</a>
+                            <a href="#" class="btn btn-sm btn-secondary" @click.prevent="getProduct(item.id)">查看更多</a>
+                            <a href="#" class="btn btn-sm btn-danger" @click.prevent="addToCart(item.id)">加入購物車</a>
                         </div>
                     </div>
                 </li>
             </ul>
-            <pagination class="col-12" :pages="pagination" @update="getProducts"></pagination>
+            <pagination class="col-12" :pages="pagination" @update="getProducts" v-if="!Object.keys(pagination).length == 0"></pagination>
         </div>
 
         <div class="container-fluid footer bg-primary text-center">
@@ -161,7 +158,7 @@
                             <label for="num" class="sr-only">數量</label>
                             <select id="num" class="form-control" v-model="tempProduct.num" @change="change">
                                 <option value="0" selected disabled>請選擇數量</option>
-                                <option v-for="(num, index) in 10" :key="index" :value="num">{{ num + tempProduct.unit }}</option>
+                                <option v-for="(num, index) in 10" :key="index" :value="num">{{ num }}</option>
                             </select>
                         </div>
                     </div>
@@ -290,6 +287,12 @@ export default {
           .then((res) => {
             this.isLoading = false;
             this.getCart();
+            this.$swal.fire({
+              icon: 'success',
+              title: '已加入購物車！',
+              text: '',
+              confirmButtonColor: '#B38C4D',
+            });
           })
           .catch((err) => {
             this.isLoading = false;
@@ -302,6 +305,12 @@ export default {
             // eslint-disable-next-line no-param-reassign
             num += item.quantity;
             this.changeQuantity(id, num);
+            this.$swal.fire({
+              icon: 'success',
+              title: '已加入購物車！',
+              text: '',
+              confirmButtonColor: '#B38C4D',
+            });
           }
         });
       }

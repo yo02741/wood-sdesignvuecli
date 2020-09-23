@@ -335,8 +335,9 @@ export default {
       if (this.form.coupon === '') {
         this.$swal.fire({
           icon: 'error',
-          title: 'Hello ?',
-          text: '請輸入優惠券代碼！',
+          title: '請輸入優惠券序號！',
+          text: '',
+          confirmButtonColor: '#B38C4D',
         }).then((clicked) => {
           if (clicked) {
             this.form.coupon = '';
@@ -360,8 +361,9 @@ export default {
             this.isLoading = false;
             this.$swal.fire({
               icon: 'error',
-              title: 'oops ?',
-              text: '無此優惠券代碼！',
+              title: '無此優惠券代碼！',
+              text: '請再確認一次',
+              confirmButtonColor: '#B38C4D',
             }).then((clicked) => {
               if (clicked) {
                 this.form.coupon = '';
@@ -377,8 +379,9 @@ export default {
       if (Object.keys(this.cart).length === 0) {
         this.$swal.fire({
           icon: 'error',
-          title: '您的購物車空空的喔！',
+          title: '您的購物車是空的喔！',
           text: "Let's Go Shopping！",
+          confirmButtonColor: '#B38C4D',
         }).then((clicked) => {
           if (clicked) {
             this.$router.push('/products');
@@ -396,8 +399,9 @@ export default {
 
             this.$swal.fire({
               icon: 'success',
-              title: '購物成功，THX :)！',
-              text: '謝謝光臨！',
+              title: '購物成功！',
+              text: '謝謝您的光臨！',
+              confirmButtonColor: '#B38C4D',
             }).then((clicked) => {
               if (clicked) {
                 this.$router.push('/');

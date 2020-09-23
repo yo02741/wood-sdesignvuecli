@@ -23,8 +23,35 @@
     }
 }
 
+.card {
+    height: 100%;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    box-shadow: 0 10px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    transition: all .5s;
+    &:hover {
+        border: 3px solid $primary;
+        .card-body {
+            opacity: 1;
+        }
+    }
+}
+
 .cardimg {
-    height: 200px;
+    position: relative;
+    height: 400px;
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
+
+.card-body {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: whitesmoke;
+    opacity: 0;
+    transition: all .5s;
+}
+
