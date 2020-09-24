@@ -12,7 +12,14 @@ import {
   faGithub,
   faCodepen,
 } from '@fortawesome/free-brands-svg-icons';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faTrashAlt,
+  faUserCircle,
+  faShoppingCart,
+  faCheck,
+  faAngleRight,
+  faAngleLeft,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 // VueLodingOverlay
@@ -49,7 +56,8 @@ import router from './router';
 import '@/assets/css/all.css';
 
 // FontAwesome
-library.add(faFacebook, faInstagram, faGithub, faCodepen, faTrashAlt);
+// eslint-disable-next-line max-len
+library.add(faFacebook, faInstagram, faGithub, faCodepen, faTrashAlt, faUserCircle, faShoppingCart, faCheck, faAngleRight, faAngleLeft);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 // VueLoadingOverlay

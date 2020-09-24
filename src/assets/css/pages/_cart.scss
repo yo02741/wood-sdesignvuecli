@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
 .cartjumbotron {
-    height: 50vh;
-    background: url('https://images.pexels.com/photos/761535/pexels-photo-761535.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') no-repeat center center;
+    min-height: 20vh;
+    background: url('https://images.pexels.com/photos/168442/pexels-photo-168442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') no-repeat center center;
     background-size: cover;
     box-shadow: 0 10px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 
@@ -12,6 +14,65 @@
         flex-direction: column;
         .input-group-prepend button, .input-group-append button, .quantitybtn {
             width: 100%;
+        }
+    }
+}
+
+.progressicon {
+    width: 50px;
+    height: 50px;
+    background: gray;
+    border-radius: 150px;
+    svg {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+    }
+}
+
+.stepstandby {
+    opacity: .5;
+}
+
+.stepsING {
+    opacity: 1;
+}
+
+.iconangleright {
+    font-size: 24px;
+}
+
+.cartlist {
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 8px 6px rgba(0,0,0,0.30), 0 11px 21px rgba(0,0,0,0.30);
+}
+
+.cartlist ul .textli {
+    border-top: 3px solid rgba(0,0,0,.1);
+    border-bottom: 3px solid rgba(0,0,0,.1);
+}
+
+.thx {
+    .txt {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .picture {
+        background: url('https://images.pexels.com/photos/326311/pexels-photo-326311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') no-repeat center center;
+        background-size: cover;
+        width: 100%;
+        padding-top: 50%;
+        border-radius: 10px;
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+        .pictureTxt {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 120px;
+            font-family: 'Amatic SC', cursive;
         }
     }
 }

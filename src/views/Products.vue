@@ -12,7 +12,7 @@
             <nav class="navbar navbar-expand-lg navClass py-3">
             <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
               <router-link to="/" class="navbar-brand text-white
-              font-weight-bold ml-4 logo">木's design</router-link>
+              font-weight-bold logo">木's design</router-link>
             </h1>
             <button class="navbar-toggler" type="button"
               data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -46,7 +46,7 @@
             </nav>
         </div>
 
-        <div class="container d-none" :class="{ 'd-block' : products !== [] }">
+        <div class="container d-none productsmain" :class="{ 'd-block' : products !== [] }">
             <div class="row productcategory">
                 <div class="col-12">
                     <ul class="d-flex flex-column flex-md-row justify-content-center text-center pl-0">

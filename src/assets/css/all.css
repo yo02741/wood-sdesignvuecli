@@ -4,6 +4,7 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -11560,7 +11561,7 @@ li {
 
 .sustainabilityjumbotron {
   height: 50vh;
-  background: url("https://images.pexels.com/photos/3171942/pexels-photo-3171942.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center;
+  background: url("https://images.pexels.com/photos/142497/pexels-photo-142497.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center;
   background-size: cover;
   -webkit-box-shadow: 0 10px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
           box-shadow: 0 10px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
@@ -11598,11 +11599,15 @@ li {
 }
 
 .productsjumbotron {
-  height: 50vh;
-  background: url("https://images.pexels.com/photos/40973/background-brown-circle-cut-40973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center;
+  height: 20vh;
+  background: url("https://images.pexels.com/photos/1422286/pexels-photo-1422286.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center;
   background-size: cover;
   -webkit-box-shadow: 0 10px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
           box-shadow: 0 10px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.productsmain {
+  min-height: 80vh;
 }
 
 .productcategory .item a {
@@ -11664,8 +11669,8 @@ li {
 }
 
 .cartjumbotron {
-  height: 50vh;
-  background: url("https://images.pexels.com/photos/761535/pexels-photo-761535.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center;
+  min-height: 20vh;
+  background: url("https://images.pexels.com/photos/168442/pexels-photo-168442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center;
   background-size: cover;
   -webkit-box-shadow: 0 10px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
           box-shadow: 0 10px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
@@ -11684,5 +11689,70 @@ li {
   .quantity .input-group-prepend button, .quantity .input-group-append button, .quantity .quantitybtn {
     width: 100%;
   }
+}
+
+.progressicon {
+  width: 50px;
+  height: 50px;
+  background: gray;
+  border-radius: 150px;
+}
+
+.progressicon svg {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.stepstandby {
+  opacity: .5;
+}
+
+.stepsING {
+  opacity: 1;
+}
+
+.iconangleright {
+  font-size: 24px;
+}
+
+.cartlist {
+  border-radius: 10px;
+  background-color: white;
+  -webkit-box-shadow: 0 8px 6px rgba(0, 0, 0, 0.3), 0 11px 21px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 8px 6px rgba(0, 0, 0, 0.3), 0 11px 21px rgba(0, 0, 0, 0.3);
+}
+
+.cartlist ul .textli {
+  border-top: 3px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+.thx .txt {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.thx .picture {
+  background: url("https://images.pexels.com/photos/326311/pexels-photo-326311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  padding-top: 50%;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.thx .picture .pictureTxt {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 120px;
+  font-family: 'Amatic SC', cursive;
 }
 /*# sourceMappingURL=all.css.map */
