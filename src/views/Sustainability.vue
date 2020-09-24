@@ -101,3 +101,13 @@
         </div>
     </div>
 </template>
+
+<script>
+import $ from 'jquery';
+
+export default {
+  created() {
+    $('html,body').animate({ scrollTop: 0 }, 'slow');
+  },
+};
+</script>

@@ -454,6 +454,7 @@ export default {
             $('#stepThreeArea').removeClass('stepsstandby');
             $('#stepThreeArea').addClass('stepsING');
             $('#stepThreeIcon').addClass('bg-primary');
+            $('html,body').animate({ scrollTop: 200 }, 'slow');
           });
       }
     },
@@ -469,6 +470,7 @@ export default {
       $('#stepNext').removeClass('stepsstandby');
       $('#stepNext').addClass('stepsING');
       $('#stepTwoIcon').addClass('bg-primary');
+      $('html,body').animate({ scrollTop: 200 }, 'slow');
     },
     returnToProductlist() {
       $('#form').removeClass('d-block');
@@ -482,6 +484,7 @@ export default {
       $('#stepNext').removeClass('stepsING');
       $('#stepNext').addClass('stepsstandby');
       $('#stepTwoIcon').removeClass('bg-primary');
+      $('html,body').animate({ scrollTop: 200 }, 'slow');
     },
     toProducts() {
       this.$router.push('/products');
@@ -489,6 +492,7 @@ export default {
   },
   created() {
     this.getCart();
+    $('html,body').animate({ scrollTop: 0 }, 'slow');
   },
 };
 </script>

@@ -343,6 +343,7 @@ export default {
   created() {
     this.getProducts();
     this.getCart();
+    $('html,body').animate({ scrollTop: 0 }, 'slow');
   },
 };
 </script>
