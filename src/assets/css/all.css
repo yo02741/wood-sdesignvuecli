@@ -11730,6 +11730,13 @@ li {
   border-bottom: 3px solid rgba(0, 0, 0, 0.1);
 }
 
+.form {
+  border-radius: 10px;
+  background-color: white;
+  -webkit-box-shadow: 0 8px 6px rgba(0, 0, 0, 0.3), 0 11px 21px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 8px 6px rgba(0, 0, 0, 0.3), 0 11px 21px rgba(0, 0, 0, 0.3);
+}
+
 .thx .txt {
   position: relative;
   top: 50%;

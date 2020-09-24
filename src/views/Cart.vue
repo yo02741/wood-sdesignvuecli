@@ -79,7 +79,7 @@
               </div>
             </li>
           </ul>
-          <div id="productlist" class="row py-4">
+          <div id="cartlist" class="row py-4">
               <div class="col-12 col-md-8 cartlist py-4 px-4 mx-auto">
                   <div class="text-right">
                       <button class="btn btn-outline-danger my-3" @click="delProducts">
@@ -160,8 +160,8 @@
                   </ul>
               </div>
           </div>
-          <div id="form" class="row py-4 form d-none">
-              <div class="col-12 col-md-8 mx-auto">
+          <div id="form" class="row py-4 d-none">
+              <div class="col-12 col-md-8 mx-auto form py-4 px-4">
                   <validation-observer v-slot="{ invalid }">
                       <form @submit.prevent="createOrder">
                           <div class="form-group">
@@ -212,7 +212,7 @@
                               <textarea name="留言" id="message" class="form-control" v-model="form.message"></textarea>
                           </div>
                           <div class="d-flex justify-content-between">
-                              <button type="button" class="btn btn-outline-primary border-0" @click="returnToProductlist">
+                              <button type="button" class="btn btn-outline-primary border-0" @click="returnToCartlist">
                                 <font-awesome-icon class="mr-2" :icon="['fas','angle-left']" />
                                 返回
                                 </button>
@@ -223,7 +223,7 @@
               </div>
           </div>
           <div id="thx" class="row py-4 thx d-none">
-            <div class="col-12 col-md-7 col-lg-6 text-center">
+            <div class="col-12 col-md-7 col-lg-6 text-center py-4 px-4">
               <div class="txt">
                 <p class="h2 my-4">訂單建立成功</p>
                 <p class="my-4">謝謝您的光臨！</p>
@@ -459,8 +459,8 @@ export default {
       }
     },
     showForm() {
-      $('#productlist').removeClass('d-block');
-      $('#productlist').addClass('d-none');
+      $('#cartlist').removeClass('d-block');
+      $('#cartlist').addClass('d-none');
 
       $('#form').removeClass('d-none');
       $('#form').addClass('d-block');
@@ -472,12 +472,12 @@ export default {
       $('#stepTwoIcon').addClass('bg-primary');
       $('html,body').animate({ scrollTop: 200 }, 'slow');
     },
-    returnToProductlist() {
+    returnToCartlist() {
       $('#form').removeClass('d-block');
       $('#form').addClass('d-none');
 
-      $('#productlist').removeClass('d-none');
-      $('#productlist').addClass('d-block');
+      $('#cartlist').removeClass('d-none');
+      $('#cartlist').addClass('d-block');
 
       $('#stepTwoArea').removeClass('stepsING');
       $('#stepTwoArea').addClass('stepsstandby');
