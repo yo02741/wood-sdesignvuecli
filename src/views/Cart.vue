@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <topbtn></topbtn>
         <!-- eslint-disable max-len -->
         <!-- spinner/dots/bars -->
         <loading loader="bars"

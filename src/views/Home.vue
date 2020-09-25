@@ -1,5 +1,6 @@
 <template>
   <div>
+    <topbtn></topbtn>
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
         <nav class="navbar navbar-expand-lg navClass py-3">
             <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">

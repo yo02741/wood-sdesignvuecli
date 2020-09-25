@@ -22,11 +22,14 @@
 </template>
 
 <script>
+import $ from 'jquery';
+
 export default {
   props: ['pages'],
   methods: {
     updatePage(pageNum) {
       this.$emit('update', pageNum);
+      $('html,body').animate({ scrollTop: 0 }, 'slow');
     },
   },
 };

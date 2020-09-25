@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <topbtn></topbtn>
         <!-- eslint-disable max-len -->
         <!-- spinner/dots/bars -->
         <loading loader="bars"
@@ -140,9 +141,9 @@
                         </button>
                     </div>
 
-                    <div class="modal-body d-flex flex-column">
-                        <h3 class="mt-4 text-center">{{ tempProduct.description }}</h3>
-                        <p class="mt-4 text-right"> — {{ tempProduct.content }}</p>
+                    <div class="modal-body d-flex flex-column mx-3">
+                        <h3 class="mt-4 text-left" v-html="tempProduct.description"></h3>
+                        <p class="mt-4 text-right" v-html="tempProduct.content"></p>
 
                         <div class="mt-4">
                             <div v-if="!tempProduct.price || tempProduct.price === tempProduct.origin_price">

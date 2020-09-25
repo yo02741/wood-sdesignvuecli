@@ -19,6 +19,7 @@ import {
   faCheck,
   faAngleRight,
   faAngleLeft,
+  faAngleUp,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
@@ -49,6 +50,7 @@ import 'aos/dist/aos.css';
 
 // pagination
 import pagination from '@/components/pagination.vue';
+import topbtn from '@/components/topbtn.vue';
 
 import App from './App.vue';
 import router from './router';
@@ -57,7 +59,7 @@ import '@/assets/css/all.css';
 
 // FontAwesome
 // eslint-disable-next-line max-len
-library.add(faFacebook, faInstagram, faGithub, faCodepen, faTrashAlt, faUserCircle, faShoppingCart, faCheck, faAngleRight, faAngleLeft);
+library.add(faFacebook, faInstagram, faGithub, faCodepen, faTrashAlt, faUserCircle, faShoppingCart, faCheck, faAngleRight, faAngleLeft, faAngleUp);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 // VueLoadingOverlay
@@ -92,6 +94,8 @@ AOS.init();
 
 // pagination
 Vue.component('pagination', pagination);
+
+Vue.component('topbtn', topbtn);
 
 // jQuery
 window.$ = $;
