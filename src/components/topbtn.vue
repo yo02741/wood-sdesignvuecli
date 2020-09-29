@@ -1,6 +1,6 @@
 <template>
-  <div class="topbtn">
-    <button type="button" id="topbtn" class="d-flex justify-content-center
+  <div id="topbtn" class="topbtn">
+    <button type="button" class="d-flex justify-content-center
     align-items-center bg-primary" @click="totop">
         <font-awesome-icon :icon="['fas','angle-up']" />
     </button>
