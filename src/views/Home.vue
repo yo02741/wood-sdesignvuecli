@@ -1,6 +1,5 @@
 <template>
   <div>
-    <topbtn></topbtn>
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
         <nav class="navbar navbar-expand-lg navClass py-3">
             <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
@@ -66,8 +65,8 @@
     </div>
 
     <div class="container py-5 px-0 aboutus">
-        <div class="row">
-            <div class="col-12 col-md-7 col-lg-6 text-right" data-aos="fade-left">
+        <div class="row mx-0">
+            <div class="col-12 col-md-7 col-lg-6 text-right px-0" data-aos="fade-left">
                 <div class="txt">
                     <h2 class="pb-4 h1 font-weight-bold text-center">關於我們</h2>
                     <span class="title-overlay pb-4 text-primary h1
@@ -81,7 +80,7 @@
                         並使用環保木材，實踐<router-link to="/sustainability"
                     class="font-weight-bold">永續經營</router-link>的理念。</span>
                     </p>
-                    <router-link to="/products" class="h4 mr-4">— Go Shop. </router-link>
+                    <router-link to="/products" class="h4 pr-4">— Go Shop. </router-link>
                 </div>
             </div>
             <div class="d-none d-md-block col-md-5 col-lg-6 picture" data-aos="zoom-in"></div>

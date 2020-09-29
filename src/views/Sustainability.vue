@@ -1,6 +1,5 @@
 <template>
     <div>
-        <topbtn></topbtn>
         <div class="jumbotron jumbotron-fluid sustainabilityjumbotron">
             <nav class="navbar navbar-expand-lg navClass py-3">
             <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
