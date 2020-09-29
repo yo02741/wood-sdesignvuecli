@@ -1,7 +1,9 @@
 <template>
-    <button type="button" id="topbtn" class="topbtn bg-primary" @click="totop">
+  <div class="topbtn">
+    <button type="button" id="topbtn" class="bg-primary" @click="totop">
         <font-awesome-icon :icon="['fas','angle-up']" />
     </button>
+  </div>
 </template>
 
 <script>
@@ -9,7 +11,6 @@ import $ from 'jquery';
 
 $(window).scroll(() => {
   const scrollVal = $(window).scrollTop();
-  console.log(scrollVal);
   if (scrollVal > 400) {
     $('#topbtn').fadeIn();
   } else {
