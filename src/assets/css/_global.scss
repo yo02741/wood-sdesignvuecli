@@ -50,8 +50,11 @@ li {
     border-radius: 20px;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     transition: all .5s;
+    &:hover {
+      border: 1px solid #fff;
+    }
   }
-  svg {
+  i {
     font-size: 24px;
     text-align: center;
     color: #fff;
@@ -59,7 +62,7 @@ li {
   &:focus {
     outline:none;
   }
-  &:hover svg{
+  &:hover i{
     color: $accent;
   }
 }

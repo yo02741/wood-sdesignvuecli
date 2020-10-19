@@ -2,7 +2,7 @@
   <div id="topbtn" class="topbtn">
     <button type="button" class="d-flex justify-content-center
     align-items-center bg-primary" @click="totop">
-        <font-awesome-icon :icon="['fas','angle-up']" />
+      <i class="fas fa-angle-up"></i>
     </button>
   </div>
 </template>

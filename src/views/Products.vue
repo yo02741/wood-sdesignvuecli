@@ -11,7 +11,7 @@
         <div class="jumbotron jumbotron-fluid productsjumbotron">
             <Header></Header>
         </div>
-        <div class="container d-none productsmain" :class="{ 'd-block' : products !== [] }">
+        <div class="container productsmain">
             <div class="row productcategory">
                 <div class="col-12">
                     <ul class="d-flex flex-column flex-md-row justify-content-center text-center pl-0">
@@ -100,168 +100,42 @@
 
 <script>
 import $ from 'jquery';
+import { mapGetters } from 'vuex';
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 export default {
-  data() {
-    return {
-      products: [],
-      tempProduct: {
-        imageUrl: [],
-        num: 0,
-      },
-      categoryNow: '全部',
-      category: [],
-      pagination: {},
-      isLoading: false,
-      api: {
-        uuid: '3f7b1d29-d350-4de5-92ca-9b0bdfb7ca45',
-        apiPath: 'https://course-ec-api.hexschool.io/',
-      },
-      cart: {},
-      cartTotal: 0,
-    };
-  },
   methods: {
     getProducts(pageNum = 1) {
-      const url = `${this.api.apiPath}api/${this.api.uuid}/ec/products?page=${pageNum}`;
-      this.isLoading = true;
-      this.categoryNow = '全部';
-      this.$http.get(url)
-        .then((res) => {
-          this.isLoading = false;
-          this.products = res.data.data;
-          this.pagination = res.data.meta.pagination;
-
-          this.products.forEach((item) => {
-            this.category.push(item.category);
-          });
-          this.category = this.category.filter((item, index, arr) => arr.indexOf(item) === index);
-        })
-        .catch((err) => {
-          this.isLoading = false;
-        });
+      this.$store.dispatch('getProducts', pageNum);
     },
     getProductsCategory(category) {
-      const url = `${this.api.apiPath}api/${this.api.uuid}/ec/products?page=1`;
-      this.categoryNow = category;
-      this.isLoading = true;
-      this.$http.get(url)
-        .then((res) => {
-          this.isLoading = false;
-          this.products = res.data.data;
-          this.pagination = {};
-
-          this.products = this.products.filter((item) => item.category === category);
-        })
-        .catch((err) => {
-          this.isLoading = false;
-        });
+      this.$store.dispatch('getProductsCategory', category);
     },
     getProduct(id) {
-      const url = `${this.api.apiPath}api/${this.api.uuid}/ec/product/${id}`;
-      this.isLoading = true;
-      this.$http.get(url)
-        .then((res) => {
-          this.isLoading = false;
-          this.tempProduct = res.data.data;
-          this.$set(this.tempProduct, 'num', 0);
-          $('#detailProductModal').modal('show');
-        })
-        .catch((err) => {
-          this.isLoading = false;
-        });
-    },
-    getCart() {
-      const url = `${this.api.apiPath}api/${this.api.uuid}/ec/shopping`;
-      this.isLoading = true;
-      this.$http.get(url)
-        .then((res) => {
-          this.cartTotal = 0;
-          this.isLoading = false;
-          this.cart = res.data.data;
-        })
-        .catch((err) => {
-          this.isLoading = false;
-        });
+      this.$store.dispatch('getProduct', id);
     },
     change() {
-      this.tempProduct.num = parseInt($('#num').val(), 10);
+      this.$store.dispatch('change');
+    },
+    getCart() {
+      this.$store.dispatch('getCart');
     },
     addToCart(id, num = 1) {
-      const url = `${this.api.apiPath}api/${this.api.uuid}/ec/shopping`;
-
-      const repeat = false;
-      this.cart.forEach((item) => {
-        if (item.product.id === id) {
-          this.repeat = true;
-        }
-      });
-      // 遠端的購物車是空的 或是 此物件沒在購物車內 -> 新增至購物車
-      if (Object.keys(this.cart).length === 0 || this.repeat === false) {
-        const cart = {
-          product: id,
-          quantity: num,
-        };
-
-        this.isLoading = true;
-
-        this.$http.post(url, cart)
-          .then((res) => {
-            this.isLoading = false;
-            this.getCart();
-            this.$swal.fire({
-              icon: 'success',
-              title: '已加入購物車！',
-              text: '',
-              confirmButtonColor: '#B38C4D',
-            });
-          })
-          .catch((err) => {
-            this.isLoading = false;
-            this.getCart();
-          });
-      } else {
-        // 遠端的購物車內已有 此物件 -> 將此項商品疊加上去
-        this.cart.forEach((item) => {
-          if (item.product.id === id) {
-            // eslint-disable-next-line no-param-reassign
-            num += item.quantity;
-            this.changeQuantity(id, num);
-            this.$swal.fire({
-              icon: 'success',
-              title: '已加入購物車！',
-              text: '',
-              confirmButtonColor: '#B38C4D',
-            });
-          }
-        });
-      }
-
-      this.repeat = false;
-
-      $('#detailProductModal').modal('hide');
+      this.$store.dispatch('addToCart', { id, num });
     },
     changeQuantity(id, num) {
-      const url = `${this.api.apiPath}api/${this.api.uuid}/ec/shopping`;
-
-      const cart = {
-        product: id,
-        quantity: num,
-      };
-
-      this.isLoading = true;
-
-      this.$http.patch(url, cart)
-        .then((res) => {
-          this.isLoading = false;
-          this.getCart();
-        })
-        .catch((err) => {
-          this.isLoading = false;
-          this.getCart();
-        });
+      this.$store.dispatch('changeQuantity', { id, num });
     },
+  },
+  computed: {
+    ...mapGetters([
+      'isLoading',
+      'products',
+      'tempProduct',
+      'pagination',
+      'category',
+      'categoryNow',
+    ]),
   },
   created() {
     this.getProducts();

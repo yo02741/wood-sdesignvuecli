@@ -178,7 +178,7 @@
                           </div>
                           <div class="d-flex justify-content-between">
                               <button type="button" class="btn btn-outline-primary border-0" @click="returnToCartlist">
-                                <font-awesome-icon class="mr-2" :icon="['fas','angle-left']" />
+                                <i class="fas fa-angle-left mr-2"></i>
                                 返回
                                 </button>
                               <button type="submit" class="btn btn-primary" :disabled="invalid">送出訂單</button>
