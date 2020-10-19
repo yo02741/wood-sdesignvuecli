@@ -4,29 +4,6 @@ import Vue from 'vue';
 import 'bootstrap';
 import { $ } from 'jquery';
 
-// fontAwesome
-import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-  faFacebook,
-  faInstagram,
-  faGithub,
-  faCodepen,
-} from '@fortawesome/free-brands-svg-icons';
-import {
-  faTrashAlt,
-  faUserCircle,
-  faShoppingCart,
-  faCheck,
-  faAngleRight,
-  faAngleLeft,
-  faAngleUp,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-
-// VueLodingOverlay
-import Loading from 'vue-loading-overlay';
-import 'vue-loading-overlay/dist/vue-loading.css';
-
 // VueAxios
 import axios from 'axios';
 import VueAxios from 'vue-axios';
@@ -48,22 +25,17 @@ import VueSweetalert2 from 'vue-sweetalert2';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-// pagination
-import pagination from '@/components/pagination.vue';
-import topbtn from '@/components/topbtn.vue';
+// VueLodingOverlay
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
+
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
+import Pagination from '@/components/Pagination.vue';
+import Topbtn from '@/components/Topbtn.vue';
 
 import App from './App.vue';
 import router from './router';
-// Own CSS
-import '@/assets/css/all.css';
-
-// FontAwesome
-// eslint-disable-next-line max-len
-library.add(faFacebook, faInstagram, faGithub, faCodepen, faTrashAlt, faUserCircle, faShoppingCart, faCheck, faAngleRight, faAngleLeft, faAngleUp);
-Vue.component('font-awesome-icon', FontAwesomeIcon);
-
-// VueLoadingOverlay
-Vue.component('Loading', Loading);
 
 // VueAxios
 Vue.use(VueAxios, axios);
@@ -92,10 +64,13 @@ Vue.use(VueSweetalert2);
 // Aos
 AOS.init();
 
-// pagination
-Vue.component('pagination', pagination);
+// VueLoadingOverlay
+Vue.component('Loading', Loading);
 
-Vue.component('topbtn', topbtn);
+Vue.component('Header', Header);
+Vue.component('Footer', Footer);
+Vue.component('Pagination', Pagination);
+Vue.component('Topbtn', Topbtn);
 
 // jQuery
 window.$ = $;

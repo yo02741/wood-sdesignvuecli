@@ -1,41 +1,7 @@
 <template>
     <div>
-        <div class="jumbotron jumbotron-fluid aboutusjumbotron">
-            <nav class="navbar navbar-expand-lg navClass py-3">
-            <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
-              <router-link to="/" class="navbar-brand text-white
-              font-weight-bold logo">木's design</router-link>
-            </h1>
-            <button class="navbar-toggler" type="button"
-              data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-end"
-              id="navbarSupportedContent"
-                data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <router-link to="/aboutus"
-                        class="nav-link px-4 font-weight-bold">關於我們</router-link>
-                    </li>
-                    <li class="nav-item">
-                        <router-link to="/sustainability"
-                        class="nav-link px-4 font-weight-bold">永續經營</router-link>
-                    </li>
-                    <li class="nav-item">
-                        <router-link to="/products"
-                        class="nav-link px-4 font-weight-bold">產品列表</router-link>
-                    </li>
-                    <li class="nav-item">
-                        <router-link to="/cart"
-                        class="nav-link px-4 font-weight-bold">購物車</router-link>
-                    </li>
-                </ul>
-            </div>
-            </nav>
+        <div class="jumbotron jumbotron-fluid py-0 aboutusjumbotron">
+          <Header></Header>
         </div>
 
         <div class="container py-5 aboutuscontainer">
@@ -57,48 +23,7 @@
                 <div class="d-none d-md-block col-md-5 col-lg-6 picture" data-aos="zoom-in"></div>
             </div>
         </div>
-
-        <div class="container-fluid footer bg-primary text-center">
-          <div class="container py-4">
-              <div class="row">
-                  <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column
-                    justify-content-center align-items-center">
-                    <router-link to="/" class="h1 text-white font-weight-bold px-4 logo"
-                    >木's design</router-link>
-                  </div>
-                  <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column
-                    justify-content-center align-items-center">
-                      <p class="text-white mb-0">Copyright © 2020 木's design</p>
-                      <p class="text-white mb-0">純屬練習，不做商業行為。</p>
-                      <p class="text-white mb-0">圖片來源：unsplash、pexels</p>
-                  </div>
-                  <div class="col-md-4">
-                      <ul class="d-flex justify-content-around  align-items-center mb-0 pl-0">
-                          <li>
-                              <a href="https://www.facebook.com/profile.php?id=100003064961458" class="icon">
-                                  <font-awesome-icon :icon="['fab', 'facebook']" />
-                              </a>
-                          </li>
-                          <li>
-                              <a href="https://www.instagram.com/8736.yo/" class="icon">
-                                  <font-awesome-icon :icon="['fab', 'instagram']" />
-                              </a>
-                          </li>
-                          <li>
-                              <a href="https://github.com/yo02741" class="icon">
-                                  <font-awesome-icon :icon="['fab', 'github']" />
-                              </a>
-                          </li>
-                          <li>
-                              <a href="https://codepen.io/yo02741" class="icon">
-                                  <font-awesome-icon :icon="['fab', 'codepen']" />
-                              </a>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-        </div>
+        <Footer></Footer>
     </div>
 </template>
 

@@ -14,7 +14,7 @@
         flex-direction: column;
         .input-group-prepend button, .input-group-append button, .quantitybtn {
             width: 100%;
-        }
+        }    
     }
 }
 
@@ -23,10 +23,12 @@
     height: 50px;
     background: gray;
     border-radius: 150px;
-    svg {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
+    i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
         font-size: 20px;
     }
 }

@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <topbtn></topbtn>
+        <Topbtn></Topbtn>
         <!-- eslint-disable max-len -->
         <!-- spinner/dots/bars -->
         <loading loader="bars"
@@ -10,71 +10,35 @@
         </loading>
 
         <div class="jumbotron jumbotron-fluid cartjumbotron">
-            <nav class="navbar navbar-expand-lg navClass py-3">
-              <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
-                <router-link to="/" class="navbar-brand text-white
-                font-weight-bold logo">木's design</router-link>
-              </h1>
-              <button class="navbar-toggler" type="button"
-                data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false"
-                  aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-
-              <div class="collapse navbar-collapse justify-content-end"
-                id="navbarSupportedContent"
-                  data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
-                  <ul class="navbar-nav">
-                      <li class="nav-item">
-                          <router-link to="/aboutus"
-                          class="nav-link px-4 font-weight-bold">關於我們</router-link>
-                      </li>
-                      <li class="nav-item">
-                          <router-link to="/sustainability"
-                          class="nav-link px-4 font-weight-bold">永續經營</router-link>
-                      </li>
-                      <li class="nav-item">
-                          <router-link to="/products"
-                          class="nav-link px-4 font-weight-bold">產品列表</router-link>
-                      </li>
-                      <li class="nav-item">
-                          <router-link to="/cart"
-                          class="nav-link px-4 font-weight-bold">購物車</router-link>
-                      </li>
-                  </ul>
-              </div>
-            </nav>
+            <Header></Header>
         </div>
 
         <div class="container py-5" style="min-height: 500px;">
           <ul class="d-flex justify-content-around align-items-center pl-0 mb-4">
-            <li id="steponeArea" class="stepstandING">
-              <div  class="d-flex flex-column align-items-center">
-                <div id="steponeIcon" class="d-flex justify-content-center progressicon mb-2 bg-primary">
-                  <font-awesome-icon class="text-white" :icon="['fas', 'shopping-cart']" />
-                </div>
-                <p class="font-weight-bold">確認訂單品項</p>
+            <li id="steponeArea" class="d-flex flex-column align-items-center stepstandING">
+              <div id="steponeIcon" class="d-flex justify-content-center progressicon mb-2 bg-primary">
+                <i class="fas fa-shopping-cart text-white"></i>
               </div>
+              <p class="font-weight-bold">確認訂單品項</p>
             </li>
             <li class="stepstandING">
-              <font-awesome-icon class="iconangleright" :icon="['fas','angle-right']" />
+              <i class="fas fa-angle-right iconangleright"></i>
             </li>
             <li id="stepTwoArea" class="stepstandby">
               <div class="d-flex flex-column align-items-center">
                 <div id="stepTwoIcon" class="d-flex justify-content-center progressicon mb-2">
-                  <font-awesome-icon class="text-white" :icon="['fas', 'user-circle']" />
+                  <i class="fas fa-user-circle text-white"></i>
                 </div>
                 <p class="font-weight-bold">輸入訂單資訊</p>
               </div>
             </li>
             <li id="stepNext" class="stepstandby">
-              <font-awesome-icon class="iconangleright" :icon="['fas','angle-right']" />
+              <i class="fas fa-angle-right iconangleright"></i>
             </li>
             <li id="stepThreeArea" class="stepstandby">
               <div  class="d-flex flex-column align-items-center">
                 <div id="stepThreeIcon" class="d-flex justify-content-center progressicon mb-2">
-                  <font-awesome-icon class="text-white" :icon="['fas', 'check']" />
+                  <i class="fas fa-check text-white"></i>
                 </div>
                 <p class="font-weight-bold">完成訂單送出</p>
               </div>
@@ -84,7 +48,7 @@
               <div class="col-12 col-md-8 cartlist py-4 px-4 mx-auto">
                   <div class="text-right">
                       <button class="btn btn-outline-danger my-3" @click="delProducts">
-                          <font-awesome-icon class="mr-1" :icon="['fas', 'trash-alt']" />
+                          <i class="fas fa-trash-alt mr-1"></i>
                           刪除所有商品
                       </button>
                   </div>
@@ -103,7 +67,7 @@
                               <td class="align-middle">
                                   <button class="btn btn-outline-danger
                                   btn-sm" @click="delProduct(item.product.id)">
-                                    <font-awesome-icon class="mr-1" :icon="['fas', 'trash-alt']"/>
+                                    <i class="fas fa-trash-alt mr-1"></i>
                                   </button>
                               </td>
                               <td class="align-middle">{{ item.product.title }}</td>
@@ -237,47 +201,7 @@
           </div>
         </div>
 
-        <div class="container-fluid footer bg-primary text-center">
-          <div class="container py-4">
-              <div class="row">
-                  <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column
-                    justify-content-center align-items-center">
-                    <router-link to="/" class="h1 text-white font-weight-bold px-4 logo"
-                    >木's design</router-link>
-                  </div>
-                  <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column
-                    justify-content-center align-items-center">
-                      <p class="text-white mb-0">Copyright © 2020 木's design</p>
-                      <p class="text-white mb-0">純屬練習，不做商業行為。</p>
-                      <p class="text-white mb-0">圖片來源：unsplash、pexels</p>
-                  </div>
-                  <div class="col-md-4">
-                      <ul class="d-flex justify-content-around  align-items-center mb-0 pl-0">
-                          <li>
-                              <a href="https://www.facebook.com/profile.php?id=100003064961458" class="icon">
-                                  <font-awesome-icon :icon="['fab', 'facebook']" />
-                              </a>
-                          </li>
-                          <li>
-                              <a href="https://www.instagram.com/8736.yo/" class="icon">
-                                  <font-awesome-icon :icon="['fab', 'instagram']" />
-                              </a>
-                          </li>
-                          <li>
-                              <a href="https://github.com/yo02741" class="icon">
-                                  <font-awesome-icon :icon="['fab', 'github']" />
-                              </a>
-                          </li>
-                          <li>
-                              <a href="https://codepen.io/yo02741" class="icon">
-                                  <font-awesome-icon :icon="['fab', 'codepen']" />
-                              </a>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-        </div>
+        <Footer></Footer>
     </div>
 </template>
 
